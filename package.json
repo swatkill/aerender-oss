@@ -1,0 +1,27 @@
+{
+  "name": "aeworker-oss",
+  "version": "1.0.0",
+  "description": "ae worker oss",
+  "main": "index.js",
+  "scripts": {
+    "test": "git repository: https://github.com/swatkill/aerender-oss.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swatkill/aerender-oss.git"
+  },
+  "keywords": [
+    "ae",
+    "oss",
+    "render"
+  ],
+  "author": "Robin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swatkill/aerender-oss/issues"
+  },
+  "homepage": "https://github.com/swatkill/aerender-oss#readme",
+  "dependencies": {
+    "ali-oss": "^6.17.1"
+  }
+}
