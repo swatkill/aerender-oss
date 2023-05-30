@@ -37,13 +37,13 @@ const run = async (job, settings, action, type) => {
             finalInput = path.join(job.workpath, finalInput);
 
         logger.log(
-            `[aeworker-oss] uploading to presigned-url: ${url}`
+            `[aeworker-oss] uploading to presigned-url: ${object}`
         );
 
         await putOSS(region,accessKeyId,accessKeySecret,bucket,object,finalInput, logger);
     } catch (error) {
         logger.log(
-            `[aeworker-oss] failed uploading to presigned-url: ${url} \n ${error?.message}`
+            `[aeworker-oss] failed uploading to presigned-url: ${object} \n ${error?.message}`
         );
         throw error;
     }
