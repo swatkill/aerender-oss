@@ -1,6 +1,6 @@
 {
   "name": "aeworker-oss",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ae worker oss",
   "main": "index.js",
   "scripts": {
