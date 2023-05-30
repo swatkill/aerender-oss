@@ -1,7 +1,7 @@
 const path = require("path");
 const OSS = require('ali-oss');
 
-const putOSS = async(region,accessKeyId,accessKeySecret,bucket,object,localFile,logger) =>{
+const putOSS = async(region,accessKeyId,accessKeySecret,bucket,object,localFile) =>{
     let client = new OSS({
         region: region,
         accessKeyId: accessKeyId,// 阿里云获取
@@ -12,15 +12,15 @@ const putOSS = async(region,accessKeyId,accessKeySecret,bucket,object,localFile,
         // 'object'填写上传至OSS的object名称,即不包括Bucket名称在内的Object的完整路径。
         // 'localfile'填写上传至OSS的本地文件完整路径。
         let r1 = await client.put(object,localFile);
-        logger.log('put success: %j', r1);
+        console.log('put success: %j', r1);
         let r2 = await client.get(object);
-        logger.log('get success: %j', r2);
+        console.log('get success: %j', r2);
     } catch(e) {
-        logger.log('error: %j', e);
+        console.log('error: %j', e);
     }
 }
 
-const run = async (job, settings, action, type,logger) => {
+const run = async (job, settings, action, type) => {
     if (type != "postrender") {
         throw new Error(
             `[nexrender-action-upload-s3-presigned] action can be only run in postrender mode, you provided: ${type}.`
